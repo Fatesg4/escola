@@ -1,7 +1,8 @@
-package com.edivan.escola.rest;
+package com.edivan.escolaSwagger.rest;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,30 +11,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edivan.escola.dao.PessoaDao;
-import com.edivan.escola.entity.Pessoa;
+import com.edivan.escolaSwagger.dao.TurmaDao;
+import com.edivan.escolaSwagger.entity.Turma;
 
+// oque é rest ?
 @RestController
-@RequestMapping("/curso")
-//@Api(value = "API Rest Curso")
-public class PessoaRest {
+// oque ela faz ?
+@RequestMapping("/turma")
+public class TurmaRest {
 	
-	private PessoaDao pessoaDao;
+	@Autowired
+	private TurmaDao turmaDao;
+
+	// CRUD
 	
 	@GetMapping
-	public List<Pessoa> get(){
-		return pessoaDao.findAll();
+	public List<Turma> get(){
+		return turmaDao.findAll();
 	}
 	
 	@PostMapping
-	public void post(@RequestBody Pessoa pessoa) {
-		pessoaDao.save(pessoa);
+	public void post(@RequestBody Turma turma) {
+		turmaDao.save(turma);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
-		pessoaDao.deleteById(id);
+		turmaDao.deleteById(id);
 	}
-	
 	
 }

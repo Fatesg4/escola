@@ -1,4 +1,4 @@
-package com.edivan.escola.entity;
+package com.edivan.escolaSwagger.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

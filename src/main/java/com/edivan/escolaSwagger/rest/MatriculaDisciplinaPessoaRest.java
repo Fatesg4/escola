@@ -1,4 +1,4 @@
-package com.edivan.escola.rest;
+package com.edivan.escolaSwagger.rest;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edivan.escola.dao.MatriculaDisciplinaPessoaDao;
-import com.edivan.escola.entity.MatriculaDisciplinaPessoa;
+import com.edivan.escolaSwagger.dao.MatriculaDisciplinaPessoaDao;
+import com.edivan.escolaSwagger.entity.MatriculaDisciplinaPessoa;
 
 // Oque é rest ?
 @RestController

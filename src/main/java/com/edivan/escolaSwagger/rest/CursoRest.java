@@ -1,4 +1,4 @@
-package com.edivan.escola.rest;
+package com.edivan.escolaSwagger.rest;
 
 import java.util.List;
 
@@ -11,32 +11,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edivan.escola.dao.DisciplinaDao;
-import com.edivan.escola.entity.Disciplina;
+import com.edivan.escolaSwagger.dao.CursoDao;
+import com.edivan.escolaSwagger.entity.Curso;
 
-// oque é rest ?
+//	oque o rest é ?
 @RestController
-// oque faz ?
-@RequestMapping("/disciplina")
-public class DisciplinaRest {
+// 	Oque ele acessar ?
+@RequestMapping("/cursos")
+public class CursoRest {
 	
 	@Autowired
-	private DisciplinaDao disciplinaDao;
+	private CursoDao cursoDao;
 	
-	// GRUD
-	
+	// Açoes do CRUD
 	@GetMapping
-	public List<Disciplina> get(){
-		return disciplinaDao.findAll();
+	public List<Curso> get(){
+		return cursoDao.findAll();
 	}
 	
 	@PostMapping
-	public void post (@RequestBody Disciplina disciplina) {
-		disciplinaDao.save(disciplina);
+	private void post(@RequestBody Curso curso) {
+		cursoDao.save(curso);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void delete (@PathVariable("id") Long id) {
-		disciplinaDao.deleteById(id);
+	private void delete(@PathVariable("id") Long id) {
+		cursoDao.deleteById(id);
 	}
 }

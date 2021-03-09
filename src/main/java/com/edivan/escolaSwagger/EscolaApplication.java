@@ -1,4 +1,4 @@
-package com.edivan.escola;
+package com.edivan.escolaSwagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
